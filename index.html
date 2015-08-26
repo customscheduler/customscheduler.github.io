@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Custom reservation datepicker</title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mockjax/1.6.2/jquery.mockjax.min.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<h1><i class="fa fa-calendar-o fa-2x" style="margin-right: 20px;"></i>Custom reservation datepicker</h1>
+			<p>This is example site that should perform how reservation datepicker should work.</p>
+		</div><form action="">
+			<div class="row">
+				<div id="calendar">
+					
+				</div>
+			</div>
+		</form>
+		<div class="row">
+			<p><em>Light grey means that that day should be free serviceman. </em></p>
+		</div>
+	</div>
+
+	<div class="modal fade" id="myModal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title">Proceed reservation</h4>
+				</div>
+				<div class="modal-body">
+					<p class="lead">Select <strong>time</strong> when you are ready to give us your car.</p>
+
+					<h1 class="selectedTime text-center"></h1>
+					
+					<div class="hourPicker" id="hourPicker">
+						<div id="tile1" class="tile" data-toggle="tooltip" data-placement="top" data-start="8:00" data-stop="9:00" title="8:00 - 9:00"></div>
+						<div id="tile2" class="tile" data-toggle="tooltip" data-placement="top" data-start="9:00" data-stop="10:00" title="9:00 - 10:00"></div>
+						<div id="tile3" class="tile" data-toggle="tooltip" data-placement="top" data-start="10:00" data-stop="11:00" title="10:00 - 11:00"></div>
+						<div id="tile4" class="tile" data-toggle="tooltip" data-placement="top" data-start="11:00" data-stop="12:00" title="11:00 - 12:00"></div>
+						<div id="tile5" class="tile" data-toggle="tooltip" data-placement="top" data-start="12:00" data-stop="13:00" title="12:00 - 13:00"></div>
+						<div id="tile6" class="tile" data-toggle="tooltip" data-placement="top" data-start="13:00" data-stop="14:00" title="13:00 - 14:00"></div>
+						<div id="tile7" class="tile" data-toggle="tooltip" data-placement="top" data-start="14:00" data-stop="15:00" title="14:00 - 15:00"></div>
+						<div id="tile8" class="tile" data-toggle="tooltip" data-placement="top" data-start="15:00" data-stop="16:00" title="15:00 - 16:00"></div>
+						<div id="tile9" class="tile" data-toggle="tooltip" data-placement="top" data-start="16:00" data-stop="17:00" title="16:00 - 17:00"></div>
+						<div id="tile10" class="tile" data-toggle="tooltip" data-placement="top" data-start="17:00" data-stop="18:00" title="17:00 - 18:00"></div>
+						<div id="tile11" class="tile" data-toggle="tooltip" data-placement="top" data-start="18:00" data-stop="19:00" title="18:00 - 19:00"></div>
+						<div id="tile12" class="tile" data-toggle="tooltip" data-placement="top" data-start="19:00" data-stop="20:00" title="19:00 - 20:00"></div>
+					</div>
+
+					
+
+					<p><em>Light grey means that that time there should be free serviceman.</em></p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary-normal" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary-negative" id="submitTime">Next <i class="fa fa-arrow-right"></i></button>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
+	<div class="modal fade" id="modalEnd">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title">Proceed reservation</h4>
+				</div>
+				<div class="modal-body">
+					<h3>Thank you!</h3>
+					<p>For further information we will contact you via email or phone. </p>
+					<p>We will fix your car on: <strong><span id="dateTime"></span></strong></p>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur quasi impedit commodi magni cupiditate eos itaque dolore et autem! Aliquid eaque sunt placeat, quibusdam illum incidunt ratione id temporibus quo?</p>
+					<p class="text-right">-Regards</p>
+					<p class="text-right"><em>Team XYZ</em></p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary-normal" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary-negative" onclick="window.location.reload()">Submit<i class="fa fa-paper-plane-o" style="margin-left: 5px;"></i></button>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
+	<script src="js/jquery.ui.datepicker.min.js"></script>
+	<script src="js/autoload.js"></script>
+</body>
+</html>

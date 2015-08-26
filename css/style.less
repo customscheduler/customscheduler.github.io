@@ -1,0 +1,265 @@
+@font-face{
+    font-family: "Gotham-Book";
+    src: url('../assets/fonts/GothamBook.ttf'),
+    url('../assets/fonts/GothamBook.ttf'); /* IE */
+}
+
+@backgroundColor: #ebebeb;
+@headerColor: #131d27;
+@navTextColor: #fff;
+@secondBackgroundColor: #f79625; // services section
+@thirdBackgroundColor: #666666; // testimonial;
+@fourthBackgroundColor: #ffffff;
+@h3Color: #363636;
+@h3ColorInverse: #ffffff;
+
+@debugColor: #E97272;
+
+html, body{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	background-color: @backgroundColor;
+}
+
+// button styling
+
+.btn {
+    padding: 14px 24px;
+    border: 0 none;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+ 
+.btn:focus, .btn:active:focus, .btn.active:focus {
+    outline: 0 none;
+}
+ 
+.btn-primary {
+    background: #0099cc;
+    color: #ffffff;
+}
+ 
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+    background: #33a6cc;
+}
+ 
+.btn-primary:active, .btn-primary.active {
+    background: #007299;
+    box-shadow: none;
+}
+
+.btn-xl {
+    padding: 18px 28px;
+    font-size: 2vh;
+    border-radius: 8px;
+}
+
+.btn-primary-normal{
+	background-color: @navTextColor;
+	color: @secondBackgroundColor;
+}
+
+.btn-primary-normal:hover, .btn-primary-normal:active, .btn-primary-normal:visited{
+	background-color: darken(@navTextColor, 10%);
+	color: @secondBackgroundColor;
+}
+
+.btn-primary-negative{
+	background-color: @secondBackgroundColor;
+	color: @navTextColor;
+}
+
+.btn-primary-negative:hover, .btn-primary-negative:active, .btn-primary-negative:visited{
+	background-color: darken(@secondBackgroundColor, 10%);
+	color: @navTextColor;
+}
+
+
+.form-control, .btn-form-control, .input-group-addon{
+	opacity: 0.5;
+	border-radius: 0;
+	border: 0px solid #fff;
+
+	-o-transition:.5s;
+	-ms-transition:.5s;
+	-moz-transition:.5s;
+	-webkit-transition:.5s;
+	transition:.5s;
+}
+
+// Styling of calendar
+
+.ui-datepicker,
+.ui-datepicker table,
+.ui-datepicker tr,
+.ui-datepicker td,
+.ui-datepicker th {
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-spacing: 0;
+}
+
+.ui-datepicker {
+    display: none;
+    width: 100%;
+    height: 60vh;
+    padding: 20px;
+    cursor: default;
+ 
+    text-transform: uppercase;
+    font-family: "Gotham-Book", Sans-serif;
+    font-size: 1.8rem;
+ 
+    background: @thirdBackgroundColor;
+}
+
+.ui-datepicker-header {
+	width: 100%;
+	height: 10%;
+	position: relative;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #d6d6d6;
+}
+ 
+.ui-datepicker-title { text-align: center; }
+ 
+.ui-datepicker-month {
+    position: relative;
+    font-weight: 700;
+    color: @navTextColor;
+}
+ 
+.ui-datepicker-year {
+    padding-left: 8px;
+    color: darken(@navTextColor, 20%);
+}
+
+.ui-datepicker-prev,
+.ui-datepicker-next {
+    position: absolute;
+    top: -2px;
+    padding: 5px;
+    cursor: pointer;
+}
+ 
+.ui-datepicker-prev {
+    left: 0;
+    padding-left: 0;
+}
+ 
+.ui-datepicker-next {
+    right: 0;
+    padding-right: 0;
+}
+ 
+.ui-datepicker-prev span,
+.ui-datepicker-next span{
+    color: @navTextColor;
+}
+ 
+.ui-datepicker-prev span { background-position: 0px 0px; }
+ 
+.ui-datepicker-next span { background-position: -5px 0px; }
+ 
+.ui-datepicker-prev-hover span { background-position: 0px -10px; }
+ 
+.ui-datepicker-next-hover span { background-position: -5px -10px; }
+
+.ui-datepicker-calendar{
+	height: 90%;
+	width: 100%;
+}
+
+.ui-datepicker-calendar tr {
+	box-sizing: border-box;
+    font-weight: normal;
+    color: #a8a8a8;
+}
+
+.ui-datepicker-calendar td {
+    width: 14.2857%;
+
+    -o-transition:.5s;
+	-ms-transition:.5s;
+	-moz-transition:.5s;
+	-webkit-transition:.5s;
+	transition:.5s;
+}
+
+.ui-datepicker-calendar td:hover{
+	background-color: lighten(@secondBackgroundColor, 20%);
+}
+ 
+.ui-datepicker-calendar .ui-state-default {
+	box-sizing: border-box;
+    display: block;
+    outline: none;
+
+    color: @navTextColor;
+    text-decoration: none;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.ui-datepicker-calendar .ui-state-active {
+	box-sizing: border-box;
+    display: block;
+    outline: none;
+
+    text-decoration: none;
+    text-align: center;
+    vertical-align: middle;
+    color: @secondBackgroundColor;
+}
+
+.ui-datepicker-calendar:has(.ui-state-active):hover{
+	background-color: lighten(@secondBackgroundColor, 50%);
+}
+ 
+.ui-datepicker-other-month .ui-state-default { color: #565656; }
+
+.ui-datepicker-other-month:hover { 
+	color: #565656;
+	background-color: lighten(@secondBackgroundColor, 50%);
+ }
+
+ .free-day {
+  background-color: lighten(@thirdBackgroundColor, 10%);
+}
+
+.hourPicker{
+	width: 100%;
+	height: 100px;
+	margin: 40px 0;
+}
+
+.tile{
+	box-sizing: border-box;
+	display: block;
+	float: left;
+	width: calc(100%/12);
+	height: 100%;
+	border-right: 3px solid #fff;
+	background-color: @thirdBackgroundColor;
+	padding: 10px 0;
+	text-align: center;
+	color: @navTextColor;
+}
+
+.tile-free{
+	background-color: lighten(@thirdBackgroundColor, 10%);
+}
+
+.tile:hover{
+	background-color: lighten(@secondBackgroundColor, 20%);
+}
+
+.tile-selected{
+	color: @secondBackgroundColor;
+}
+
